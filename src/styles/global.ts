@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${colors.black};
+    background: ${colors.white};
     color: ${colors.white};
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -22,17 +22,17 @@ export const GlobalStyle = createGlobalStyle`
 
 
 ::-webkit-scrollbar-track {
-  background: ${colors.darkGray};
+  background: ${colors.green};
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: ${colors.yellowDark};
+  background: ${colors.gray};
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: ${colors.yellow};
+  background: ${colors.blue};
 }
   
   

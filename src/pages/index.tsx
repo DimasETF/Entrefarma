@@ -1,9 +1,16 @@
 import type { NextPage } from 'next'
+import { BarMenu } from '../components/barMenu'
+import { CategorySection } from '../components/category'
+import { Header } from '../components/header'
 
 
 const Home: NextPage = () => {
   return (
-   <h1>Entrefarma</h1>
+    <>
+      <Header />
+      <BarMenu />
+      <CategorySection />
+    </>
   )
 }
 
