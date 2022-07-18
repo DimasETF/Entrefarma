@@ -50,11 +50,5 @@ export const ContainerInfo = styled.div`
     h1{
       color: ${colors.blue};
     }
-    span{
-      color: ${colors.green};
-      font-size: 1.3rem;
-      font-weight: bold;   
-      text-align: end;
-    }
   }
 `

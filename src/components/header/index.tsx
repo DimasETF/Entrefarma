@@ -14,13 +14,12 @@ export function Header() {
           />
           <div>
             <h1>Entrefarma</h1>
-            <span>Farmácia São Luiz</span>
+            <span>Nova Serrana - MG</span>
           </div>
         </LogoImg>
         <ContainerInfo>
           <div>
             <h1>Farmácia de Manipulação</h1>
-            <span>(37)3228-1000</span>
           </div>
         </ContainerInfo>
       </HeaderContainer>
