@@ -10,6 +10,10 @@ export function BarMenu(){
       <span>Desempenho Físico</span>
       <span>Dormir Bem</span>
       <span>Saúde Sexual</span>
+      <div>
+        <h1>Farmácia de Manipulação</h1>
+        <strong>(37)3228-1000</strong>
+      </div>
     </ContainerMenu>
   )
 }

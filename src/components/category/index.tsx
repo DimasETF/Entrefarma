@@ -1,16 +1,19 @@
 import { ProductItem } from "../products";
+
 import { Category, CategoryItem, HeaderCategory } from "./styles";
 import frascoComInfo from "../../../public/frasco.png"
 import bosInfo from "../../../public/box.png"
 import bisnagaSInfo from "../../../public/bisn.png"
 import frascoSInfo from "../../../public/frascos.png"
 
+
 export function CategorySection() {
+  
   return (
     <>
-      <Category>
+       <Category>
         <HeaderCategory>
-          <h1>Queda capilar</h1>
+          <h1>Queda Capilar</h1>
         </HeaderCategory>
         <CategoryItem>
           <ProductItem
@@ -43,7 +46,7 @@ export function CategorySection() {
             price={"R$ 129.99"}
             img={frascoSInfo}
           />
-           <ProductItem
+          <ProductItem
             title={"Melatonina 5Mg 100 Doses"}
             price={"R$ 129.99"}
             img={frascoSInfo}
@@ -53,7 +56,7 @@ export function CategorySection() {
 
       <Category>
         <HeaderCategory>
-          <h1>Emagrecimento</h1>
+          <h1>Dermocosmeticos</h1>
         </HeaderCategory>
         <CategoryItem>
           <ProductItem
@@ -86,14 +89,12 @@ export function CategorySection() {
             price={"R$ 129.99"}
             img={frascoSInfo}
           />
-           <ProductItem
-            title={"Melatonina 5Mg 100 Doses"}
-            price={"R$ 129.99"}
-            img={frascoSInfo}
-          />
+          
         </CategoryItem>
       </Category>
-      </>
+
+      
+    </>
   )
 
 }

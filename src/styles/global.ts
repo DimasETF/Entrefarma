@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     background: ${colors.white};
-    color: ${colors.white};
+    color: ${colors.black};
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
@@ -22,12 +22,12 @@ export const GlobalStyle = createGlobalStyle`
 
 
 ::-webkit-scrollbar-track {
-  background: ${colors.green};
+  background: ${colors.gray800};
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: ${colors.gray};
+  background: ${colors.green};
 }
 
 /* Handle on hover */
