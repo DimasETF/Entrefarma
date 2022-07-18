@@ -1,24 +1,33 @@
 import styled from "styled-components";
 import { colors } from "../../constants/colors";
 
-export const ImageProduct = styled.div`
- display: flex;
- justify-content: center;
-`
+
 export const Product = styled.div`
-  span{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  max-width: 250px;
+  div{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1rem;
-    color: ${colors.gray800};
-    font-weight: 600;
+    flex-direction: column;
+    gap: 0.5rem;
+    span{
+      font-size: 1.2rem;
+      color: ${colors.gray800};
+    }
+    strong{
+      font-size: 1.5rem;
+      color: ${colors.green};
+    }
+    strong + span{
+      font-size: 0.875rem;
+      text-align: justify;
+      color: ${colors.gray};
+    }
   }
-  h2{
-    margin-top: 0.5rem;
-    color: ${colors.black};
-    font-size: 1.5rem;
-    text-align: center;
-  }
+  
 `
 

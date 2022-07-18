@@ -11,6 +11,10 @@ export const ContainerMenu = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    @media(max-width: 720px){
+      flex-direction: column;
+      gap: 0.5rem;
+    }
     a{
       font-size: 1.5rem;
       margin-right: 1rem;
