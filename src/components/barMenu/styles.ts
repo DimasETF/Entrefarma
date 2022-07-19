@@ -8,6 +8,8 @@ export const ContainerMenu = styled.div`
   color: ${colors.white};
   background-color: ${colors.green};
   div{
+    max-width: 1220px;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;

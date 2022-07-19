@@ -6,7 +6,6 @@ import bosInfo from "../../../public/box.png"
 import bisnagaSInfo from "../../../public/bisn.png"
 import frascoSInfo from "../../../public/frascos.png"
 
-
 export function CategorySection() {
 
   return (

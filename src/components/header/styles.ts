@@ -28,6 +28,8 @@ export const LogoImg = styled.div`
     display: flex;
     flex-direction: column;
     h1{
+      font-weight: bold;
+      font-size: 2rem;
       color: ${colors.blue};
     }
     span{
@@ -45,9 +47,9 @@ export const ContainerInfo = styled.div`
     display: none;
   }
   div{
-    display: flex;
-    flex-direction: column;
     h1{
+      font-weight: bold;
+      font-size: 1.5rem;
       color: ${colors.blue};
     }
   }
