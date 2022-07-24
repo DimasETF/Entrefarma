@@ -1,11 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 import { BiInfoCircle } from "react-icons/bi"
 import { Product } from "./styles";
-export type ProductProps = {
-  title: string,
-  price: string
-  img: StaticImageData
-}
+
 import {
   Modal,
   ModalOverlay,
@@ -22,7 +18,7 @@ import {
 } from '@chakra-ui/react'
 import { BsTelephone, BsWhatsapp } from "react-icons/bs";
 
-export function ProductItem({ title, price, img }: ProductProps) {
+export function ProductItem({ title, price, img, description }: any) {
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <Product>
@@ -32,7 +28,11 @@ export function ProductItem({ title, price, img }: ProductProps) {
           <ModalHeader>{title}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <span>O Shampoo SENKEDA Unissex combina com todos os tipos de cabelos e ajuda a realçar a beleza de cada fio, além ...</span>
+            <span><div
+              dangerouslySetInnerHTML={{
+                __html: description
+              }}
+            /></span>
             <span>{price}</span>
           </ModalBody>
 
@@ -48,16 +48,12 @@ export function ProductItem({ title, price, img }: ProductProps) {
           </ModalFooter>
         </ModalContent>
       </Modal>
-      <Image
-        src={img}
-        alt="Box"
-        width={140}
-        height={180}
-      />
+      <img src={img} alt="" />
+
       <div>
         <span>{title}</span>
-        <strong>{price}</strong>
-        <Text color="#789B99" noOfLines={[1, 2, 3]}>O Shampoo SENKEDA Unissex combina com todos os tipos de cabelos e ajuda a realçar a beleza de cada fio, além ...</Text>
+        <strong>R$ {price}</strong>
+        <Text color="#789B99" noOfLines={[1, 2, 3]}>{description}</Text>
         <Button
           onClick={onOpen}
           mt="4"
@@ -75,3 +71,4 @@ export function ProductItem({ title, price, img }: ProductProps) {
     </Product>
   )
 }
+

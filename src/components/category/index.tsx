@@ -2,57 +2,41 @@ import { ProductItem } from "../products";
 
 import { Category, CategoryContainer } from "./styles";
 
-import bosInfo from "../../../public/box.png"
-import bisnagaSInfo from "../../../public/bisn.png"
-import frascoSInfo from "../../../public/frascos.png"
+interface ProductsProps{
+  products: Product[]
+}
 
-export function CategorySection() {
+interface Product{
+  id: string,
+  title: string
+  img: {
+    url: string,
+    alt: string
+  },
+  content: string,
+  price: string
+}
+
+
+export function CategorySection({ products }: ProductsProps) {
 
   return (
-      <Category>
-        <CategoryContainer>
-        <ProductItem
-          title={"Melatonina 5Mg 100 Doses"}
-          price={"R$ 129.99"}
-          img={bosInfo}
-        />
-        <ProductItem
-          title={"Melatonina 5Mg 100 Doses"}
-          price={"R$ 19.99"}
-          img={frascoSInfo}
-        />
-        <ProductItem
-          title={"Melatonina 5Mg 100 Doses"}
-          price={"R$ 10.99"}
-          img={bisnagaSInfo}
-        />
-        <ProductItem
-          title={"Melatonina 5Mg 100 Doses"}
-          price={"R$ 129.99"}
-          img={frascoSInfo}
-        />
-         <ProductItem
-          title={"Melatonina 5Mg 100 Doses"}
-          price={"R$ 149.99"}
-          img={bosInfo}
-        />
-        <ProductItem
-          title={"Melatonina 5Mg 100 Doses"}
-          price={"R$ 82.99"}
-          img={frascoSInfo}
-        />
-        <ProductItem
-          title={"Melatonina 5Mg 100 Doses"}
-          price={"R$ 129.99"}
-          img={frascoSInfo}
-        />
-        <ProductItem
-          title={"Melatonina 5Mg 100 Doses"}
-          price={"R$ 129.99"}
-          img={bisnagaSInfo}
-        />
-        
-        </CategoryContainer>
-      </Category>
+    <Category>
+      <CategoryContainer>
+        {products.map(product => {
+          return (
+            <ProductItem
+              title={product.title}
+              price={product.price}
+              img={product.img.url}
+              description={product.content}
+            />
+          )
+        })}
+
+
+
+      </CategoryContainer>
+    </Category>
   )
 }
