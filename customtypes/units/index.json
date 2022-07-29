@@ -40,6 +40,13 @@
           "label": "Content",
           "placeholder": ""
         }
+      },
+      "category": {
+        "type": "Text",
+        "config": {
+          "label": "Category",
+          "placeholder": ""
+        }
       }
     }
   }

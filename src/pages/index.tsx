@@ -5,25 +5,13 @@ import { CategorySection } from '../components/category'
 import { Footer } from '../components/footer'
 import { Header } from '../components/header'
 import { createClient } from '../../prismicio'
+import {IProductsProps} from "../interfaces/IProducts"
+import {CategoriesContextProvider} from "../contexts/CategoriesContext"
 
-interface ProductsProps{
-  products: Product[]
-}
 
-interface Product{
-  id: string,
-  title: string
-  img: {
-    url: string,
-    alt: string
-  },
-  content: string,
-  price: string
-}
-
-export default function Home({products}: ProductsProps ){
+export default function Home({products}: IProductsProps ){
   return (
-    <>
+    <CategoriesContextProvider products={products}>
       <Head>
         <title>Entrefarma - Nova Serrana</title>
       </Head>
@@ -31,7 +19,7 @@ export default function Home({products}: ProductsProps ){
       <BarMenu />
       <CategorySection products={products}/>
       <Footer/>
-    </>
+    </CategoriesContextProvider>
   )
 }
 
@@ -49,6 +37,7 @@ export async function getStaticProps({ previewData }: any) {
       },
       content: product.data.content,
       price: product.data.price,
+      category: product.data.category
     }
   })
 

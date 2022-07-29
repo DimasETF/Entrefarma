@@ -4,30 +4,31 @@ import { colors } from "../../constants/colors";
 
 export const Product = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem;
+  flex-wrap: wrap;
   max-width: 250px;
-  div{
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  img{
+    margin: 0 auto;
+    width: 180px;
+    height: 220px;
+  }
+`
+export const Categories = styled.div`
+   display: flex;
+   width: 100%;
+   margin-top: 1rem;
+   justify-content: space-between;
     span{
-      font-size: 1.2rem;
-      color: ${colors.gray800};
-    }
-    strong{
       font-size: 1.5rem;
+      font-weight: bold;
       color: ${colors.green};
     }
-    strong + span{
-      font-size: 0.875rem;
-      text-align: justify;
-      color: ${colors.gray};
+    span + span{
+      display: flex;
+      padding: 0.5rem;
+      color: ${colors.white};
+      background-color: ${colors.gray800};
+      font-weight: bold;
+      font-size: 0.6rem;
+      border-radius: 4px;
     }
-  }
-  
 `
-
