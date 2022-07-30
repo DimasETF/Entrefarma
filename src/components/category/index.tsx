@@ -1,4 +1,4 @@
-import { Text } from "@chakra-ui/react";
+import { Text, useToast } from "@chakra-ui/react";
 import { ProductItem } from "../products";
 import { IoAlertCircleOutline } from "react-icons/io5"
 import { Alert, Category, CategoryContainer, HeaderCategory } from "./styles";
@@ -6,8 +6,16 @@ import { useContext } from "react";
 import { CategoriesContext } from "../../contexts/CategoriesContext";
 
 export function CategorySection() {
-
   const {category, productsCategories, setCategory} = useContext(CategoriesContext)
+  const toast = useToast()
+  function exitClickButton(){
+    toast({
+      title: `visualizando a categoria - Todos os itens`,
+      variant: "solid",
+      isClosable: true,
+    })
+    setCategory("all")
+  }
   return (
     <Category>
       <HeaderCategory>
@@ -22,7 +30,7 @@ export function CategorySection() {
               <span>{category}</span>
               -
               <button
-                onClick={()=>{setCategory("all")}}
+                onClick={()=>exitClickButton()}
               >
                  sair
               </button>
