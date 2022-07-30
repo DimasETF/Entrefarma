@@ -1,4 +1,3 @@
-import type { NextPage } from 'next'
 import Head from 'next/head'
 import { BarMenu } from '../components/barMenu'
 import { CategorySection } from '../components/category'
@@ -17,7 +16,7 @@ export default function Home({products}: IProductsProps ){
       </Head>
       <Header />
       <BarMenu />
-      <CategorySection products={products}/>
+      <CategorySection/>
       <Footer/>
     </CategoriesContextProvider>
   )
@@ -42,6 +41,7 @@ export async function getStaticProps({ previewData }: any) {
   })
 
   return {
-    props: { products }, // Will be passed to the page component as props
+    props: { products },
+    revalidate: 60 * 60 * 2 // 2hours
   }
 }
