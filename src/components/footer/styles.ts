@@ -24,6 +24,7 @@ export const FooterContent = styled.div`
   a{
     margin-bottom: 0.5rem;
     display: flex;
+    flex-wrap: wrap;
     font-size: 1.2rem;
     gap: 0.3rem;
     svg{

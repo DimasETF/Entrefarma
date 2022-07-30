@@ -1,5 +1,4 @@
 import { createContext, Dispatch, ReactNode, SetStateAction, useEffect, useState } from "react";
-import {IProductsProps} from "../interfaces/IProducts"
 
 type AuthContextType = {
   children: ReactNode
@@ -19,19 +18,19 @@ interface Product {
 
 
 type CategoriesProps = {
-  categoriesButtons: string[]
-  productsCategories: IProductsProps
-  category: string
-  setCategory: Dispatch<SetStateAction< undefined>>;
+  categoriesButtons: string[] | undefined
+  productsCategories: Product[] | undefined
+  category: string | undefined
+  setCategory: Dispatch<SetStateAction<string>>;
 }
 
 export const CategoriesContext = createContext({} as CategoriesProps)
 
 export function CategoriesContextProvider({children, products}: AuthContextType){
 
-  const [category, setCategory] = useState("all")
-  const [productsCategories, setProductsCategories] = useState<IProductsProps>()
-  const [categoriesButtons, setCategoriesButtons] = useState<String[]>()
+  const [category, setCategory] = useState<string>("all")
+  const [productsCategories, setProductsCategories] = useState<Product[]>()
+  const [categoriesButtons, setCategoriesButtons] = useState<string[]>()
 
   function verifyCategories() {
     const categories = [] as string[]
@@ -45,15 +44,16 @@ export function CategoriesContextProvider({children, products}: AuthContextType)
 
   useEffect(() => {
     verifyCategories()
-    const productList = [] as Product[]
+    const productList = [] as Product[] | undefined
     products.map(product => {
       if (category == "all") {
-        productList.push(product)
+        productList?.push(product)
       } else if (category != "all" && product.category == category) {
-        productList.push(product)
+        productList?.push(product)
       }
     })
     setProductsCategories(productList)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [category, products])
   
   return(

@@ -2,26 +2,21 @@ import { Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHea
 import React, { useContext } from "react"
 import { BiCategoryAlt } from "react-icons/bi"
 import { CategoriesContext } from "../../contexts/CategoriesContext"
-import { IProductsProps } from "../../interfaces/IProducts"
 import { DrawerContainerItens } from "./sytles"
 
 
 export function DrawerCategory() {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const btnRef = React.useRef()
   const { categoriesButtons, setCategory } = useContext(CategoriesContext)
-  function ClickButton(item){
+  function ClickButton(item: string){
+    onClose()
     setCategory(item)
-    
   }
   return (
     <>
       <DrawerContainerItens>
         <button
-          ref={btnRef}
           onClick={onOpen}
-          fontSize="1.5rem"
-          _hover={{ bgColor: "transparent", color: "#063B6D" }}
         >
           <BiCategoryAlt />
           CATEGORIAS
@@ -32,8 +27,6 @@ export function DrawerCategory() {
         placement='left'
         size="sm"
         onClose={onClose}
-        finalFocusRef={btnRef}
-        
       >
         <DrawerOverlay />
         <DrawerContent
@@ -47,9 +40,7 @@ export function DrawerCategory() {
           <DrawerBody>
             <Stack spacing={4}>
               <Button
-                onClick={() => {
-                  setCategory("all")
-                }}
+                onClick={() => ClickButton("all")}
                 bgColor={"transparent"}
                 _hover={{ bgColor: '#68B42F', color: "#fff" }}
               >
@@ -59,8 +50,7 @@ export function DrawerCategory() {
                 return (
                   <Button
                     key={item}
-                    onClick={() => ClickButton(item)}
-                    
+                    onClick={()=> ClickButton(item)}
                     bgColor={"transparent"}
                     _hover={{ bgColor: '#68B42F', color: "#fff" }}
                   >

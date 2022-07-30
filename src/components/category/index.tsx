@@ -8,7 +8,6 @@ import { CategoriesContext } from "../../contexts/CategoriesContext";
 export function CategorySection() {
 
   const {category, productsCategories, setCategory} = useContext(CategoriesContext)
-
   return (
     <Category>
       <HeaderCategory>

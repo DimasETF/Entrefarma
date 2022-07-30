@@ -8,8 +8,7 @@ export const Product = styled.div`
   max-width: 250px;
   img{
     margin: 0 auto;
-    width: 180px;
-    height: 220px;
+    
   }
 `
 export const Categories = styled.div`
