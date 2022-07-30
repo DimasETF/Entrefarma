@@ -42,6 +42,6 @@ export async function getStaticProps({ previewData }: any) {
 
   return {
     props: { products },
-    revalidate: 60 * 60 * 2 // 2hours
+    revalidate: 60 * 60 * 3 // 2hours
   }
 }
