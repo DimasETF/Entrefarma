@@ -1,5 +1,5 @@
 import { ContactItens, ContainerMenu, ContentBarMenu } from "./styles";
-import { BsWhatsapp, BsTelephone } from "react-icons/bs"
+import { AiOutlineWhatsApp, AiOutlinePhone } from "react-icons/ai"
 import { DrawerCategory } from "../drawer";
 
 export function BarMenu() {
@@ -10,8 +10,8 @@ export function BarMenu() {
           <DrawerCategory />
         </span>
         <ContactItens>
-          <a href="https://web.whatsapp.com/send?phone=5537999718369" target={"_blank"} rel="noreferrer"><BsWhatsapp /><span>(37)99971-8369</span></a>
-          <a href="tel:+553732281000"><BsTelephone /><span>(37)3228-1000</span></a>
+          <a href="https://api.whatsapp.com/send?phone=5537999718369" target={"_blank"} rel="noreferrer"><AiOutlineWhatsApp /><span>(37)99971-8369</span></a>
+          <a href="tel:+553732281000"><AiOutlinePhone /><span>(37)3228-1000</span></a>
         </ContactItens>
       </ContentBarMenu>
     </ContainerMenu>

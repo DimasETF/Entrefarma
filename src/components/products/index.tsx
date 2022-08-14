@@ -19,7 +19,7 @@ import {
 } from '@chakra-ui/react'
 import { BsTelephone, BsWhatsapp } from "react-icons/bs";
 
-export function ProductItem({ title, price, img, alt, description, category }: any) {
+export function ProductItem({ title, price, img, alt, description }: any) {
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <Product>
@@ -59,7 +59,7 @@ export function ProductItem({ title, price, img, alt, description, category }: a
       </Box>
 
       <Text color="#063B6D" noOfLines={[1, 2]} fontSize="1.1rem" minHeight="3rem" fontWeight="bold" mb={4}>{title}</Text>
-      <Text color="#789B99" minHeight={"45px"} noOfLines={[1, 2]} >{description}</Text>
+      <Text color="#789B99" minHeight={"40px"} noOfLines={[1, 2]} >{description}</Text>
       <Categories>
         <span>R$ {price}</span>
       </Categories>

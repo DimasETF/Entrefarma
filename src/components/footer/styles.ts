@@ -7,11 +7,10 @@ export const ContainerFooter = styled.section`
   padding: 3rem;
   background-color: #BEC2CC;
 `
-
-export const FooterContent = styled.div`
+export const FooterTitle = styled.div`
   max-width: 1120px;
   margin: 0 auto;
-  h1{
+   h1{
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
     color: ${colors.blue};
@@ -21,19 +20,31 @@ export const FooterContent = styled.div`
     }
     margin-bottom: 1rem;
   }
+`
+export const FooterContent = styled.div`
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   a{
     margin-bottom: 0.5rem;
     display: flex;
-    flex-wrap: wrap;
-    font-size: 1.2rem;
+    align-items: center;
+    font-size: 1.3rem;
     gap: 0.3rem;
+    font-weight: bold;
     svg{
-      font-size: 1.5rem;
+      min-width: 1.3rem;
       color: ${colors.blue};
+      
     }
     &:hover{
       color: ${colors.blue};
       transition: 0.3s;
+    }
+    @media(max-width: 920px){
+      font-size: 1rem;
     }
   }
 `

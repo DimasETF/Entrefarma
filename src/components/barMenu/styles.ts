@@ -18,7 +18,7 @@ export const ContentBarMenu = styled.div`
 export const ContactItens = styled.div`
   display: flex;
   gap: 2rem;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   @media(max-width: 720px){
     gap: 0;
     span{
@@ -28,11 +28,13 @@ export const ContactItens = styled.div`
   a{
     color: ${colors.white};
     font-weight: bold;
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
     transition: 0.2s;
     svg{
-      margin-right: 1rem;
+      width: 1.5rem;
+      margin-right: 0.3rem;
     }
     &:hover{
       color: ${colors.blue};
